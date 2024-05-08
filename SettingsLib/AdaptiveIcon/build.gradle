@@ -44,7 +44,8 @@ android {
 }
 
 dependencies {
-    compileOnly files("${rootDir.path}/libs/framework.jar")
     implementation project(':SettingsLib:Tile')
+    compileOnly files("${rootDir.path}/libs/framework.jar")
+
     implementation libs.appcompat
 }

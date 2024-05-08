@@ -42,7 +42,10 @@ android {
 }
 
 dependencies {
-    compileOnly files('../libs/framework.jar')
-    implementation files("${rootDir.path}/libs/preference-1.2.0-alpha01.aar")
     implementation project(':SettingsLib:HelpUtils')
+
+    compileOnly files("${rootDir.path}/libs/framework.jar")
+    implementation files("${rootDir.path}/libs/preference-1.2.0-alpha01.aar")
+    
+    implementation libs.appcompat
 }

@@ -43,5 +43,5 @@ android {
 }
 
 dependencies {
-    compileOnly files('../../libs/framework.jar')
+    compileOnly files("${rootDir.path}/libs/framework.jar")
 }

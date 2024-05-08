@@ -46,6 +46,7 @@ android {
 dependencies {
     implementation project(':SettingsLib:SettingsTheme')
     implementation files("${rootDir.path}/libs/preference-1.2.0-alpha01.aar")
+
     implementation libs.recyclerview
     implementation libs.appcompat
 }

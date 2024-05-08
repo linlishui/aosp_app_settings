@@ -58,6 +58,7 @@ dependencies {
     implementation libs.kotlin_stdlib_jdk7
 
     implementation files("${rootDir.path}/libs/preference-1.2.0-alpha01.aar")
+
     implementation project(':SettingsLib:RestrictedLockUtils')
     implementation project(':SettingsLib:AdaptiveIcon')
     implementation project(':SettingsLib:HelpUtils')

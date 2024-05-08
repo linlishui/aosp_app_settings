@@ -24,7 +24,7 @@ android {
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 28
+        targetSdkVersion TARGET_SDK
         vectorDrawables.useSupportLibrary = true
     }
 
@@ -56,7 +56,8 @@ android {
 
 dependencies {
     implementation project(':setupcompat')
+    implementation libs.material
     implementation libs.appcompat
-    implementation libs.recyclerview
     implementation libs.annotation
+    implementation libs.recyclerview
 }

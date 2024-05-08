@@ -42,3 +42,10 @@ android {
         }
     }
 }
+
+dependencies {
+    implementation files("${rootDir.path}/libs/preference-1.2.0-alpha01.aar")
+
+    implementation libs.annotation
+    implementation libs.recyclerview
+}

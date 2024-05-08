@@ -26,7 +26,8 @@ buildscript {
                 material                  : 'com.google.android.material:material:1.5.0-alpha02',
                 protobuf_java             : 'com.google.protobuf:protobuf-java:3.5.1',
                 protoc                    : 'com.google.protobuf:protoc:3.5.1',
-                lottie                    : 'com.airbnb.android:lottie:3.6.0',
+                lottie                    : 'com.airbnb.android:lottie:3.3.0',
+                vectordrawable_animated   : 'androidx.vectordrawable:vectordrawable-animated:1.1.0',
 
                 core_ktx                  : 'androidx.core:core-ktx:1.3.1',
                 kotlin_stdlib_jdk7        : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
