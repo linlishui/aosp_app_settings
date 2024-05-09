@@ -14,11 +14,7 @@ public class Main {
     public static void main(String[] args) {
         String[] arr = new String[]{
                 "res",
-                "SettingsLib/res",
-                "WifiTrackerLib/res",
-                "SettingsLib/HelpUtils/res",
-                "SettingsLib/RestrictedLockUtils/res",
-                "SettingsLib/SearchWidget/res"
+//                "SettingsLib/res",
         };
 
         for (String name : arr) {

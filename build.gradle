@@ -146,6 +146,7 @@ android {
 //}
 
 dependencies {
+
     compileOnly files('libs/framework.jar')
     compileOnly files('libs/core-all.jar')
     compileOnly files('libs/telephony-common.jar')
@@ -160,28 +161,14 @@ dependencies {
     implementation files('libs/statslog-settings.jar')
     implementation files('libs/guava.jar') // (include jsr305.jar)
 
-    implementation project(':WifiTrackerLib')
-    implementation project(':setupcompat')
-    implementation project(':setupdesign')
-    implementation project(':iconloaderlib')
-    implementation project(':SettingsLib')
-    implementation project(':SettingsLib:ActionBarShadow')
-    implementation project(':SettingsLib:RestrictedLockUtils')
-    implementation project(':SettingsLib:ActionButtonsPreference')
-    implementation project(':SettingsLib:HelpUtils')
-    implementation project(':SettingsLib:SettingsSpinner')
-    implementation project(':SettingsLib:Tile')
-    implementation project(':SettingsLib:LayoutPreference')
-    implementation project(':SettingsLib:AppPreference')
-    implementation project(':SettingsLib:RadioButtonPreference')
-    implementation project(':SettingsLib:search')
-    implementation project(':SettingsLib:SearchWidget')
-    implementation project(':SettingsLib:EntityHeaderWidgets')
-    implementation project(':SettingsLib:AdaptiveIcon')
-    implementation project(':SettingsLib:DisplayDensityUtils')
+    implementation files("libs/contextualcards.aar")
+    implementation files("libs/preference-1.2.0-alpha01.aar")
 
-    implementation files("${rootDir.path}/libs/contextualcards.aar")
-    implementation files("${rootDir.path}/libs/preference-1.2.0-alpha01.aar")
+    implementation files("libs/iconloader.aar")
+    implementation files("libs/SettingsLib.aar")
+    implementation files("libs/setupdesign.aar")
+    implementation files("libs/setupcompat.aar")
+    implementation files("libs/WifiTrackerLib.aar")
 
     implementation libs.appcompat
     implementation libs.recyclerview
@@ -211,16 +198,18 @@ allprojects {
     }
 
     gradle.projectsEvaluated {
-        tasks.withType(JavaCompile) {
-            if (options.bootstrapClasspath != null) {
-                Set<File> fileSet = options.bootstrapClasspath.getFiles()
-                List<File> newFileList = new ArrayList<>();
-                newFileList.add(new File("./libs/framework.jar"))
-                newFileList.add(new File("./libs/core-all.jar"))
-                newFileList.addAll(fileSet)
-                options.bootstrapClasspath = files(
-                        newFileList.toArray()
-                )
+        tasks.withType(JavaCompile).tap {
+            configureEach {
+                if (options.bootstrapClasspath != null) {
+                    Set<File> fileSet = options.bootstrapClasspath.getFiles()
+                    List<File> newFileList = new ArrayList<>();
+                    newFileList.add(new File("./libs/framework.jar"))
+                    newFileList.add(new File("./libs/core-all.jar"))
+                    newFileList.addAll(fileSet)
+                    options.bootstrapClasspath = files(
+                            newFileList.toArray()
+                    )
+                }
             }
         }
     }
